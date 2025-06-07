@@ -14,3 +14,4 @@ export const navbarSection: NavbarSectionType = {
     url: `/${resumeFileName}`,
   },
 };
+

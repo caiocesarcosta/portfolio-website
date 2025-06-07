@@ -24,14 +24,17 @@ export type ExperienceType = {
   tasks: string[];
 };
 
+// *** AQUI ESTÁ A CORREÇÃO DA ProjectType (re-adicionando 'year') ***
 export type ProjectType = {
   id: string;
   name: string;
-  url: string;
-  year: number;
+  url?: string;
+  year: number; // <-- ADICIONADO NOVAMENTE: para que sortByYear funcione
   img: string;
   tags: string[];
-  repo: string;
+  repo?: string;
+  techStack?: string[];
+  description?: string;
 };
 
 export interface FeaturedProjectType

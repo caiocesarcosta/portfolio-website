@@ -1,3 +1,5 @@
+'use client';
+
 import { FeaturedProjectType } from '@/lib/types';
 import { blurImageURL } from '@/lib/utils/config';
 import { cn } from '@/lib/utils/helper';
@@ -5,7 +7,7 @@ import { cn } from '@/lib/utils/helper';
 import { Icon } from '@iconify/react';
 import { motion, MotionProps } from 'framer-motion';
 import Image from 'next/image';
-import Link from 'next/link';
+import Link from 'next/link'; // Import do Link do Next.js
 
 interface Props extends FeaturedProjectType, MotionProps {
   align?: 'left' | 'right';
@@ -14,19 +16,24 @@ interface Props extends FeaturedProjectType, MotionProps {
 const FeaturedProject = ({
   img,
   name,
-  url,
-  repo,
+  url, // 'url' pode ser undefined ou ''
+  repo, // 'repo' pode ser undefined ou ''
   description,
   tasks,
   tags,
   align = 'left',
   ...rest
 }: Props) => {
+  // Garante que 'url' e 'repo' sejam strings, usando '#' como fallback se forem vazias/undefined.
+  // '#' é um bom fallback para links internos que não devem navegar para uma página externa válida.
+  const finalUrl = url && url.length > 0 ? url : '#';
+  const finalRepo = repo && repo.length > 0 ? repo : '#';
+
   return (
     <>
       <motion.div
         className={cn(
-          'relative hidden lg:block  min-h-[280px] sm:min-h-[360px] h-full overflow-hidden lg:overflow-visible rounded-lg lg:rounded-xl shadow-lg lg:shadow-none text-center lg:text-right',
+          'relative hidden lg:block min-h-[280px] sm:min-h-[360px] h-full overflow-hidden lg:overflow-visible rounded-lg lg:rounded-xl shadow-lg lg:shadow-none text-center lg:text-right',
           align === 'left' && 'lg:text-left'
         )}
         {...rest}
@@ -34,7 +41,6 @@ const FeaturedProject = ({
         <div
           className={cn(
             'w-full lg:max-w-[60%] absolute inset-0 h-full -z-20 lg:z-0 lg:object-contain rounded overflow-hidden shadow-2xl group',
-
             align === 'left' && 'ml-auto'
           )}
         >
@@ -47,11 +53,14 @@ const FeaturedProject = ({
             placeholder="blur"
             blurDataURL={blurImageURL}
           />
-          <Link
-            href={`${url}`}
-            target="_blank"
-            className="absolute inset-0 z-10 block bg-transparent"
-          />
+          {/* CORREÇÃO AQUI: Garante que 'url' seja uma string válida para o Link do Next.js */}
+          {finalUrl !== '#' && ( // Opcional: Só renderiza o Link se houver uma URL "real"
+            <Link
+              href={finalUrl} // Usa o href final garantido
+              target="_blank"
+              className="absolute inset-0 z-10 block bg-transparent"
+            />
+          )}
         </div>
         <div
           className={cn(
@@ -68,8 +77,9 @@ const FeaturedProject = ({
               featured project
             </div>
             <h2 className="heading-tertiary !text-white lg:!text-dark-2 !font-semibold lg:!font-normal !normal-case">
+              {/* CORREÇÃO AQUI: Garante que 'url' seja uma string válida para a tag <a> nativa */}
               <a
-                href={url}
+                href={finalUrl} // Usa o href final garantido
                 className="block duration-200 hover:text-accent"
                 target="_blank"
               >
@@ -106,22 +116,24 @@ const FeaturedProject = ({
             ))}
           </p>
 
-          {repo && (
+          {finalRepo !== '#' && ( // CORREÇÃO: Só renderiza o bloco se 'repo' for uma URL "real"
             <div
               className={cn(
                 'flex lg:justify-end items-center gap-3',
                 align === 'left' && 'lg:justify-start'
               )}
             >
+              {/* CORREÇÃO AQUI: Garante que 'repo' seja uma string válida para a tag <a> nativa */}
               <a
-                href={repo}
+                href={finalRepo} // Usa o href final garantido
                 className="block duration-200 hover:text-accent"
                 target="_blank"
               >
                 <Icon icon="tabler:brand-github" width={22} height={22} />
               </a>
+              {/* CORREÇÃO AQUI: Garante que 'url' seja uma string válida para a tag <a> nativa */}
               <a
-                href={url}
+                href={finalUrl} // Usa o href final garantido
                 className="block duration-200 hover:text-accent"
                 target="_blank"
               >
@@ -132,7 +144,7 @@ const FeaturedProject = ({
         </div>
       </motion.div>
 
-      {/* For mobile */}
+      {/* For mobile (componente duplicado para mobile, com a mesma lógica) */}
       <motion.div
         className={cn(
           'relative lg:hidden min-h-[300px] h-full rounded-xl shadow-lg lg:shadow-none text-center'
@@ -150,21 +162,22 @@ const FeaturedProject = ({
             placeholder="blur"
             blurDataURL={blurImageURL}
           />
-          <Link
-            href={`${url}`}
-            target="_blank"
-            className="absolute inset-0 z-10 block bg-transparent"
-          />
+          {/* CORREÇÃO AQUI: Garante que 'url' seja uma string válida para o Link do Next.js */}
+          {finalUrl !== '#' && ( // Opcional: Só renderiza o Link se houver uma URL "real"
+            <Link
+              href={finalUrl} // Usa o href final garantido
+              target="_blank"
+              className="absolute inset-0 z-10 block bg-transparent"
+            />
+          )}
         </header>
 
         <div className={cn('bg-bg-secondary p-5 space-y-2')}>
           <div>
-            {/* <div className="font-mono text-accent capitalize text-xs lg:mb-2.5">
-              featured project
-            </div> */}
             <h2 className="heading-tertiary !text-white !font-semibold !normal-case">
+              {/* CORREÇÃO AQUI: Garante que 'url' seja uma string válida para a tag <a> nativa */}
               <a
-                href={url}
+                href={finalUrl} // Usa o href final garantido
                 className="block duration-200 hover:text-accent"
                 target="_blank"
               >
@@ -179,7 +192,7 @@ const FeaturedProject = ({
               tasks / achievements
             </div>
             <div className="mb-2 space-y-1">
-              {tasks?.split(',').map((task) => (
+              {tasks?.split(',').map((task) => ( // Verifica se 'tasks' existe antes de splitar
                 <div key={task.slice(0, 10)}>{task}</div>
               ))}
             </div>
@@ -196,22 +209,24 @@ const FeaturedProject = ({
             ))}
           </p>
 
-          {repo && (
+          {finalRepo !== '#' && ( // CORREÇÃO: Só renderiza o bloco se 'repo' for uma URL "real"
             <div
               className={cn(
                 'flex lg:justify-end items-center gap-3',
                 align === 'left' && 'lg:justify-start'
               )}
             >
+              {/* CORREÇÃO AQUI: Garante que 'repo' seja uma string válida para a tag <a> nativa */}
               <a
-                href={repo}
+                href={finalRepo} // Usa o href final garantido
                 className="block duration-200 hover:text-accent"
                 target="_blank"
               >
                 <Icon icon="tabler:brand-github" width={22} height={22} />
               </a>
+              {/* CORREÇÃO AQUI: Garante que 'url' seja uma string válida para a tag <a> nativa */}
               <a
-                href={url}
+                href={finalUrl} // Usa o href final garantido
                 className="block duration-200 hover:text-accent"
                 target="_blank"
               >

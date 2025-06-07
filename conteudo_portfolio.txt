@@ -1,0 +1,630 @@
+--- Conteúdo de: D:/devc3/src/repositorio/portfolio-website/src/containers/About.tsx ---
+
+'use client';
+import { aboutSection } from '@/lib/content/about';
+import { author } from '@/lib/content/portfolio';
+import { getId } from '@/lib/utils/helper';
+
+import { AuthorImage, Link, ListItem, Wrapper } from '@/components';
+
+import { getSectionAnimation } from '@/styles/animations';
+
+import { useEffect, useState } from 'react';
+
+const About = () => {
+  const { title, img, list } = aboutSection;
+  // To avoid hydration error
+  const [domLoaded, setDomLoaded] = useState(false);
+
+  useEffect(() => {
+    setDomLoaded(true);
+  }, []);
+
+  return domLoaded ? (
+    <Wrapper id="about" {...getSectionAnimation}>
+      <h2 className="heading-secondary">{title}</h2>
+      <main className="flex flex-col items-center gap-16 lg:items-start lg:flex-row">
+        <div className="space-y-4 lg:w-3/5">
+          <p>
+            Hi, my name is Vatsal Singh, a first-year MCA student at{' '}
+            <Link
+              href="https://bhu.ac.in/"
+              target="_blank"
+              className="text-accent"
+            >
+              Banaras Hindu University
+            </Link>
+            .<br /> I'm an Artist as well as crazy full stack web developer who
+            wants to explore every tech stack.
+          </p>
+          <p>
+            Fast-forward to today, and I've had the privilege of working at a
+            start-up -{' '}
+            <Link
+              href="https://www.pixelwand.live/"
+              target="_blank"
+              className="text-accent"
+            >
+              Pixelwand
+            </Link>
+            .
+          </p>
+          <p>
+            My main focus these days is learning mobile development and finding
+            a decent job.
+          </p>
+
+          {list && (
+            <>
+              <p>{list.title}</p>
+              <ul className="grid w-2/3 grid-cols-2 gap-1 text-sm">
+                {list.items.map((item) => (
+                  <ListItem key={getId()}>{item}</ListItem>
+                ))}
+              </ul>
+            </>
+          )}
+        </div>
+        <AuthorImage src={img} alt={author.name} />
+      </main>
+    </Wrapper>
+  ) : (
+    <></>
+  );
+};
+
+export default About;
+
+
+--- Fim do conteúdo de: D:/devc3/src/repositorio/portfolio-website/src/containers/About.tsx ---
+
+
+--- Conteúdo de: D:/devc3/src/repositorio/portfolio-website/src/lib/content/about.ts ---
+
+import { AboutSectionType } from '@/lib/types/sections';
+
+export const aboutSection: AboutSectionType = {
+  title: 'about me',
+  // Paragraphs need to be changed from `/containers/About.tsx`
+  // Because it wasn't possible to insert anchor tags like this
+  list: {
+    title: 'Here are a few technologies I’ve been working with recently:',
+    items: [
+      'NextJs',
+      'TailwindCSS',
+      'ExpressJs',
+      'AI/ML',
+      'Prisma',
+      'CSS Animations',
+    ],
+  },
+  img: '/vatsal-singh.png',
+};
+
+
+--- Fim do conteúdo de: D:/devc3/src/repositorio/portfolio-website/src/lib/content/about.ts ---
+
+
+--- Conteúdo de: D:/devc3/src/repositorio/portfolio-website/src/lib/content/contact.ts ---
+
+import { author } from '@/lib/content/portfolio';
+import { ContactSectionType } from '@/lib/types/sections';
+
+export const contactSection: ContactSectionType = {
+  title: 'get in touch',
+  subtitle: "what's next",
+  paragraphs: [
+    'I’m currently looking for a remote job or any new opportunities.',
+    'Whether you have a project to discuss or just want to say hi, my inbox is open for all!',
+  ],
+  link: `mailto:${author.email}`,
+};
+
+
+--- Fim do conteúdo de: D:/devc3/src/repositorio/portfolio-website/src/lib/content/contact.ts ---
+
+
+--- Conteúdo de: D:/devc3/src/repositorio/portfolio-website/src/lib/content/experience.ts ---
+
+import { ExperienceSectionType } from '@/lib/types/sections';
+
+export const experienceSection: ExperienceSectionType = {
+  title: "where i've worked",
+  experiences: [
+    {
+      company: 'Dashseller',
+      companyUrl: 'https://www.dashseller.com/',
+      role: 'full-stack developer',
+      started: 'sep 2024',
+      upto: 'nov 2024',
+      tasks: [
+        'Implemented development tools, GitHub Actions, workflows, and Git flow to seamless collaboration.',
+        'Integrated Notion as a CMS to manage and display content such as blogs, job postings, and documentation.',
+      ],
+    },
+    {
+      company: 'Pixelwand',
+      companyUrl: 'https://www.pixelwand.live/',
+      role: 'frontend developer',
+      started: 'july 2023',
+      upto: 'july 2024',
+      tasks: [
+        'Implemented UI components with React & Next.js, TypeScript & Tailwind CSS.',
+        'Developed and maintained design systems that separates design logic.',
+        'Understanding client needs and proposing effective solutions, which also involves strategising and planning.',
+        'Lead a cross-functional team of developers and designers in the creation of a SaaS product.',
+      ],
+    },
+    {
+      company: 'SHMTH Capital',
+      companyUrl: 'https://shmth.capital/',
+      role: 'frontend developer intern',
+      started: 'april 2023',
+      upto: 'july 2023',
+      tasks: [
+        'Built trading platform using TradingView library.',
+        'Designed SHMTH Capital website with Next.js, TypeScript & TailwindCSS.',
+        'Collaborated with diverse nationwide team of developers.',
+      ],
+    },
+    {
+      company: 'webnetics',
+      companyUrl: 'https://webnetic.vercel.app/',
+      role: 'frontend developer',
+      started: 'june 2022',
+      upto: 'january 2023',
+      tasks: [
+        'Developed a static frontend UI from scratch using Next.js, based on Figma design handovers.',
+        'Designed and implemented the folder structure and initial application setup to ensure scalability.',
+        'Reviewed and approved pull requests to maintain code quality and consistency.',
+        'Collaborated remotely with a globally distributed team, leveraging screen-sharing for effective communication.',
+      ],
+    },
+  ],
+};
+
+
+--- Fim do conteúdo de: D:/devc3/src/repositorio/portfolio-website/src/lib/content/experience.ts ---
+
+
+--- Conteúdo de: D:/devc3/src/repositorio/portfolio-website/src/lib/content/featured-projects.ts ---
+
+import { FeaturedProjectsSectionType } from '@/lib/types/sections';
+import { getId } from '@/lib/utils/helper';
+
+const featuredProjectsSection: FeaturedProjectsSectionType = {
+  title: "projects i've worked on",
+  projects: [
+    {
+      id: getId(),
+      name: 'GetLifeGuard',
+      description: 'An E-Commerce platform for Self-Defense Keychain.',
+      tasks:
+        "As a freelancer, I understood the client's requirements and executed a plan to develop and design an e-commerce platform, including the frontend UI, backend setup with database, APIs, and integration with payment platforms.",
+      url: 'https://life-kit.vercel.app/',
+      img: 'https://life-kit.vercel.app/images/og.png',
+      tags: [
+        'NextJs 14',
+        'TypeScript',
+        'TailwindCSS',
+        'ShadCN',
+        'Prisma',
+        'Stripe',
+      ],
+    },
+    {
+      id: getId(),
+      name: 'Valuemetrix',
+      description: 'An AI Powered Investment Platform.',
+      tasks:
+        'I strategically planned project milestones, led a cross-functional team, established a design system, developed the website, and integrated Stripe payments with secure authentication.',
+      url: 'https://www.valuemetrix.io/',
+      img: 'https://www.valuemetrix.io/images/og.png',
+      tags: ['AI/ML', 'NextJs', 'TypeScript', 'TailwindCSS', 'Prisma'],
+    },
+    {
+      id: getId(),
+      name: 'Velvi Matrimony',
+      description:
+        'A platform that redefines the way individuals find their life partners.',
+      tasks:
+        'As a freelancer, I developed this project by planning, communicating with the client, gathering feedback, implementing UI & pages, and integrating real-time data fetching with filtering functionality.',
+      url: 'https://velvi.vercel.app/',
+      img: 'https://i.postimg.cc/tRS4GvzJ/Screenshot-2024-02-27-at-5-48-49-PM.png',
+      tags: ['NextJs', 'TypeScript', 'TailwindCSS', 'APIs'],
+    },
+    /*   {
+      id: getId(),
+      name: 'Integra',
+      description: 'An AI-Powered Leads Generation Platform.',
+      tasks:
+        'I strategically planned project milestones, led a cross-functional team, established a design system, developed the website, and integrated Stripe payments with secure authentication.',
+      url: 'https://www.integraleads.xyz/',
+      img: 'https://user-images.githubusercontent.com/68834718/279476369-2f69466a-71db-4da0-9afd-04f8f0efb621.jpeg',
+      tags: ['AI/ML', 'NextJs', 'TypeScript', 'TailwindCSS', 'Express'],
+    }, */
+
+    {
+      id: getId(),
+      name: 'Drafton',
+      description: 'The AI-powered platform that simplifies proposal creation.',
+      tasks:
+        'I designed and developed the landing page and implemented the dashboard by creating a user interface and integrating APIs.',
+      url: 'https://www.drafton.io/',
+      img: 'https://i.postimg.cc/4N6dsGcm/Screenshot-2024-06-17-at-11-05-22-PM.png',
+      tags: ['Open AI', 'NextJs', 'TypeScript', 'TailwindCSS', 'Prisma'],
+    },
+  ],
+};
+
+export default featuredProjectsSection;
+
+
+--- Fim do conteúdo de: D:/devc3/src/repositorio/portfolio-website/src/lib/content/featured-projects.ts ---
+
+
+--- Conteúdo de: D:/devc3/src/repositorio/portfolio-website/src/lib/content/footer.ts ---
+
+import { FooterSectionType } from '@/lib/types/sections';
+
+export const footerSection: FooterSectionType = {
+  title: 'Design & Built by Vatsal Singh',
+  link: 'https://github.com/vatsalsinghkv/portfolio-website',
+};
+
+
+--- Fim do conteúdo de: D:/devc3/src/repositorio/portfolio-website/src/lib/content/footer.ts ---
+
+
+--- Conteúdo de: D:/devc3/src/repositorio/portfolio-website/src/lib/content/hero.ts ---
+
+import { HeroSectionType } from '@/lib/types/sections';
+import { resumeFileName } from '@/lib/utils/config';
+
+export const heroSection: HeroSectionType = {
+  subtitle: 'Hi, my name is',
+  title: 'vatsal singh.',
+  tagline: 'I create visually pleasing interfaces for the web.',
+  description:
+    "I'm a passionate Full-Stack web developer with hands-on experience in building web applications using React.js & Next.js with TypeScript, TailwindCSS, and Prisma, with UI/UX designing.",
+  specialText: 'Currently available for freelance',
+  cta: {
+    title: 'see my resume',
+    url: `/${resumeFileName}`,
+    hideInDesktop: true,
+  },
+};
+
+
+--- Fim do conteúdo de: D:/devc3/src/repositorio/portfolio-website/src/lib/content/hero.ts ---
+
+
+--- Conteúdo de: D:/devc3/src/repositorio/portfolio-website/src/lib/content/navbar.ts ---
+
+import { NavbarSectionType } from '@/lib/types/sections';
+import { resumeFileName } from '@/lib/utils/config';
+
+export const navbarSection: NavbarSectionType = {
+  navLinks: [
+    { name: 'about', url: '/#about' },
+    { name: 'skills', url: '/#skills' },
+    { name: 'experience', url: '/#experience' },
+    { name: 'projects', url: '/#projects' },
+    { name: 'contact', url: '/#contact' },
+  ],
+  cta: {
+    title: 'resume',
+    url: `/${resumeFileName}`,
+  },
+};
+
+
+--- Fim do conteúdo de: D:/devc3/src/repositorio/portfolio-website/src/lib/content/navbar.ts ---
+
+
+--- Conteúdo de: D:/devc3/src/repositorio/portfolio-website/src/lib/content/portfolio.ts ---
+
+/*
+ * =========================
+ * AUTHOR INFO
+ * =========================
+ */
+
+import { StringKeyValueType } from '../types';
+
+export const socialLinks: StringKeyValueType = {
+  facebook: 'https://www.facebook.com/vatsalsinghkv',
+  instagram: 'https://www.instagram.com/vatsalsinghkv',
+  twitter: 'https://twitter.com/vatsalsinghkv',
+  github: 'https://github.com/vatsalsinghkv',
+  linkedin: 'https://www.linkedin.com/in/vatsalsinghkv/',
+};
+
+export const author = {
+  name: 'Vatsal Singh',
+  email: 'vatsalsinghkv@gmail.com',
+};
+
+export const seoData = {
+  title: 'Vatsal Singh | Front-End Developer',
+  description:
+    'Vatsal Singh is a front-end developer who specializes in building (and occasionally designing) exceptional visual interfaces.',
+  author: author.name,
+  image:
+    'https://user-images.githubusercontent.com/68834718/217467445-0b0d2d63-f8ad-4702-8474-814eb2cbb3be.png',
+  url: 'https://vatsalsinghkv.vercel.app/',
+  keywords: [
+    'Vatsal',
+    'Vatsal Singh',
+    '@vatsalsinghkv',
+    'vatsalsinghkv',
+    'Portfolio',
+    'Vatsal Portfolio ',
+    'Vatsal Singh Portfolio',
+  ],
+};
+
+
+--- Fim do conteúdo de: D:/devc3/src/repositorio/portfolio-website/src/lib/content/portfolio.ts ---
+
+
+--- Conteúdo de: D:/devc3/src/repositorio/portfolio-website/src/lib/content/projects.ts ---
+
+import { ProjectsSectionType } from '@/lib/types/sections';
+import { getId } from '@/lib/utils/helper';
+
+export const projectsSection: ProjectsSectionType = {
+  title: 'my projects',
+  projects: [
+    {
+      id: getId(),
+      name: 'easy fix',
+      url: 'https://easy-fix.vercel.app/',
+      repo: 'https://github.com/vatsalsinghkv/easy-fix',
+      img: 'https://user-images.githubusercontent.com/68834718/258852895-df5c6da7-a698-40fb-97c3-a5474314cb85.png',
+      year: 2023,
+      tags: ['React', 'Tailwind'],
+    },
+    {
+      id: getId(),
+      name: 'beautiful animations',
+      url: 'https://beautiful-animations-kv.vercel.app/',
+      repo: 'https://github.com/vatsalsinghkv/beautiful-animations',
+      img: 'https://user-images.githubusercontent.com/68834718/265277125-da2a6e07-7cf6-411c-b55f-94e372aa6dc8.png',
+      year: 2023,
+      tags: ['CSS Animations', 'Sass'],
+    },
+    {
+      id: getId(),
+      name: 'buttons animations',
+      url: 'https://buttons-animations-kv.vercel.app/',
+      repo: 'https://github.com/vatsalsinghkv/button-animations',
+      img: 'https://buttons-animations-kv.vercel.app/og.png',
+      year: 2023,
+      tags: ['CSS Animations', 'Sass'],
+    },
+    {
+      id: getId(),
+      name: 'image animations',
+      url: 'https://image-animations.vercel.app/',
+      repo: 'https://github.com/vatsalsinghkv/image-animations',
+      img: 'https://github-production-user-asset-6210df.s3.amazonaws.com/68834718/252267106-857c5341-1106-4e84-b7e6-80a668a20ba8.png',
+      year: 2023,
+      tags: ['CSS Animations', 'Sass'],
+    },
+    {
+      id: getId(),
+      name: 'remotive jobs',
+      url: 'https://remotive-jobs.vercel.app/',
+      repo: 'https://github.com/vatsalsinghkv/remotive-jobs',
+      img: 'https://user-images.githubusercontent.com/68834718/189035104-aa71647e-33e4-442a-a2f9-c0d50bba2db1.png',
+      year: 2022,
+      tags: ['Nextjs', 'Sass'],
+    },
+    {
+      id: getId(),
+      name: 'countries app',
+      url: 'https://countries-app-kv.netlify.app/',
+      repo: 'https://github.com/vatsalsinghkv/rest-countries-api',
+      img: 'https://user-images.githubusercontent.com/68834718/169527851-19fefb2e-e440-411a-a8a1-4767e2c8688a.png',
+      year: 2022,
+      tags: ['React', 'Sass'],
+    },
+    {
+      id: getId(),
+      name: 'rock paper scissors',
+      url: 'https://rock-paper-scissors-kv.netlify.app/',
+      repo: 'https://github.com/vatsalsinghkv/rock-paper-scissors',
+      img: 'https://user-images.githubusercontent.com/68834718/162578706-b9e57735-6fbc-4c7b-8243-2a6ba447404e.jpg',
+      year: 2022,
+      tags: ['React', 'Sass'],
+    },
+    {
+      id: getId(),
+      name: 'todo app',
+      url: 'https://todo-kv.netlify.app/',
+      repo: 'https://github.com/vatsalsinghkv/todo-app',
+      img: 'https://user-images.githubusercontent.com/68834718/152794002-0e7bc583-084b-4c39-83bb-d82d5dd642b2.png',
+      year: 2022,
+      tags: ['React', 'Sass', 'JS'],
+    },
+    {
+      id: getId(),
+      name: 'weather app',
+      url: 'https://weather-kv.netlify.app/',
+      repo: 'https://github.com/vatsalsinghkv/weather-app',
+      img: 'https://user-images.githubusercontent.com/68834718/148419702-491fa08d-e520-4e2f-b219-374ec7118b2b.png',
+      year: 2022,
+      tags: ['Html', 'sass', 'JS', 'jQuery'],
+    },
+    {
+      id: getId(),
+      name: 'blogr landing page',
+      url: 'https://blogr-kv.netlify.app/',
+      repo: 'https://github.com/vatsalsinghkv/blogr-landing-page',
+      img: 'https://user-images.githubusercontent.com/68834718/210222542-6455303d-c93e-430b-a5c8-96a431044184.png',
+      year: 2021,
+      tags: ['html', 'sass', 'JS'],
+    },
+    {
+      id: getId(),
+      name: 'natours',
+      url: 'https://natours-kv.netlify.app/',
+      repo: 'https://github.com/vatsalsinghkv/natours',
+      img: 'https://user-images.githubusercontent.com/68834718/210223114-b4f64b44-2501-49c9-9fb7-b8e53fe654c6.png',
+      year: 2021,
+      tags: ['html', 'sass', 'JS'],
+    },
+    {
+      id: getId(),
+      name: 'nexter',
+      url: 'https://vatsalsinghkv.github.io/nexter/',
+      repo: 'https://github.com/vatsalsinghkv/nexter',
+      img: 'https://user-images.githubusercontent.com/68834718/210224671-5501c5d9-a8d2-4044-a14c-38fb7e46a113.png',
+      year: 2021,
+      tags: ['html', 'sass'],
+    },
+    {
+      id: getId(),
+      name: 'IP address tracker',
+      url: 'https://vatsalsinghkv.github.io/ip-address-tracker/',
+      repo: 'https://github.com/vatsalsinghkv/ip-address-tracker',
+      img: 'https://user-images.githubusercontent.com/68834718/210223386-03bcaa20-e649-4b3d-8709-59e42c6d685a.png',
+      year: 2021,
+      tags: ['html', 'bootstrap', 'JS'],
+    },
+    {
+      id: getId(),
+      name: 'calculator app',
+      url: 'https://vatsalsinghkv.github.io/calculator-app/',
+      repo: 'https://github.com/vatsalsinghkv/calculator-app/',
+      img: 'https://user-images.githubusercontent.com/68834718/210223825-3b68d696-39c6-490c-9433-f315b7efccbd.png',
+      year: 2021,
+      tags: ['html', 'CSS', 'JS'],
+    },
+    {
+      id: getId(),
+      name: 'pig game',
+      url: 'https://vatsalsinghkv.github.io/pig-game/',
+      repo: 'https://github.com/vatsalsinghkv/pig-game',
+      img: 'https://user-images.githubusercontent.com/68834718/210223527-de7fde7a-244e-4db5-8e33-d561afad6084.png',
+      year: 2021,
+      tags: ['html', 'CSS', 'JS'],
+    },
+    {
+      id: getId(),
+      name: 'bankist marketing',
+      url: 'https://vatsalsinghkv.github.io/bankist-marketing/',
+      repo: 'https://github.com/vatsalsinghkv/bankist-marketing',
+      img: 'https://user-images.githubusercontent.com/68834718/210225545-989f79c3-cf05-4c53-b48e-b21f373b3734.png',
+      year: 2021,
+      tags: ['html', 'CSS', 'JS'],
+    },
+  ],
+};
+
+
+--- Fim do conteúdo de: D:/devc3/src/repositorio/portfolio-website/src/lib/content/projects.ts ---
+
+
+--- Conteúdo de: D:/devc3/src/repositorio/portfolio-website/src/lib/content/skills.ts ---
+
+import { SkillsSectionType } from '@/lib/types/sections';
+import { getId } from '@/lib/utils/helper';
+
+export const skillsSection: SkillsSectionType = {
+  title: 'what i do',
+  skills: [
+    {
+      id: getId(),
+      title: 'full stack development',
+      // animation lottie file: https://lottiefiles.com/
+      lottie: {
+        light: '/lotties/frontend.json',
+        dark: '/lotties/frontend-dark.json',
+      },
+      points: [
+        'Building full-stack web applications using Next.js with TypeScript, TailwindCSS, ShadCN, and Prisma',
+        'Developing responsive single-page applications using React.js',
+        'Creating RESTful APIs using Express for backend development',
+      ],
+      softwareSkills: [
+        // iconify icons: https://icon-sets.iconify.design/
+        { name: 'html-5', icon: 'vscode-icons:file-type-html' },
+        { name: 'CSS-3', icon: 'vscode-icons:file-type-css' },
+        { name: 'sass', icon: 'vscode-icons:file-type-sass' },
+        { name: 'javaScript', icon: 'vscode-icons:file-type-js-official' },
+        {
+          name: 'typeScript',
+          icon: 'vscode-icons:file-type-typescript-official',
+        },
+        { name: 'nodejs', icon: 'logos:nodejs-icon' },
+        { name: 'prisma', icon: 'vscode-icons:file-type-prisma' },
+        { name: 'reactjs', icon: 'logos:react' },
+        { name: 'nextjs', icon: 'logos:nextjs-icon' },
+        // { name: 'angularjs', icon: 'logos:angular-icon' },
+        { name: 'tailwindcss', icon: 'logos:tailwindcss-icon' },
+        { name: 'redux', icon: 'logos:redux' },
+        { name: 'database', icon: 'vscode-icons:file-type-sql' },
+        { name: 'jest', icon: 'vscode-icons:file-type-jest' },
+      ],
+    },
+    {
+      id: getId(),
+      title: 'UI/UX designing',
+      lottie: {
+        light: '/lotties/designing.json',
+        dark: '/lotties/designing-dark.json',
+      },
+      points: [
+        'Experience in designing user-friendly interfaces with figma',
+        'Experience in developing design systems and style guides',
+        'Providing user-friendly design solutions',
+      ],
+      softwareSkills: [
+        { name: 'figma', icon: 'logos:figma' },
+        { name: 'adobe illustrator', icon: 'logos:adobe-illustrator' },
+        { name: 'adobe photoshop', icon: 'logos:adobe-photoshop' },
+      ],
+    },
+  ],
+};
+
+
+--- Fim do conteúdo de: D:/devc3/src/repositorio/portfolio-website/src/lib/content/skills.ts ---
+
+
+--- Conteúdo de: D:/devc3/src/repositorio/portfolio-website/src/lib/content/social.ts ---
+
+import { socialLinks } from '@/lib/content/portfolio';
+import { SocialSectionType } from '@/lib/types/sections';
+
+export const socialSection: SocialSectionType = {
+  socialLinks: [
+    {
+      icon: 'tabler:brand-github',
+      url: socialLinks.github,
+    },
+    {
+      icon: 'mdi:instagram',
+      url: socialLinks.instagram,
+    },
+    {
+      icon: 'lucide:twitter',
+      url: socialLinks.twitter,
+    },
+    {
+      icon: 'lucide:linkedin',
+      url: socialLinks.linkedin,
+    },
+    {
+      icon: 'lucide:facebook',
+      url: socialLinks.facebook,
+    },
+  ],
+};
+
+
+--- Fim do conteúdo de: D:/devc3/src/repositorio/portfolio-website/src/lib/content/social.ts ---
+
+

@@ -29,10 +29,14 @@ export interface HeroSectionType extends Section {
 
 export interface AboutSectionType extends Section {
   list: {
+    id: string;
     title: string;
-    items: string[];
+    content: string;
+  }[];
+  img: {
+    src: string;
+    alt: string;
   };
-  img: string;
 }
 
 type SkillType = {
@@ -64,8 +68,37 @@ export interface FeaturedProjectsSectionType extends Section {
 
 export interface ContactSectionType extends Section {
   subtitle?: string;
-  paragraphs: string[];
-  link: string;
+  contactDetails?: {
+    email?: string;
+    phone?: string;
+    address?: string;
+  };
+  links?: {
+    type: string;
+    url: string;
+    icon: string;
+  }[];
+  paragraphs?: string[];
+}
+
+export interface PortfolioSectionType extends Section {
+  name: string;
+  welcomeText: string;
+  author: {
+    name: string;
+    tagline: string;
+    image: string;
+  };
+  socialLinks: {
+    github?: string;
+    linkedin?: string;
+    email?: string;
+    instagram?: string;
+    twitter?: string;
+    medium?: string;
+    discord?: string;
+    facebook?: string; // <--- ADICIONADO: Propriedade 'facebook'
+  };
 }
 
 export interface SocialSectionType {
@@ -75,3 +108,12 @@ export interface SocialSectionType {
 export interface FooterSectionType extends Section {
   link: string;
 }
+
+export type SeoSectionType = {
+  title: string;
+  description: string;
+  author: string;
+  keywords: string[];
+  url: string;
+  image: string;
+};

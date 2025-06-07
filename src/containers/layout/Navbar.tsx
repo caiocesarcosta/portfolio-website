@@ -1,4 +1,5 @@
 'use client';
+
 import { navbarSection } from '@/lib/content/navbar';
 import { author } from '@/lib/content/portfolio';
 import useWindowWidth from '@/lib/hooks/use-window-width';
@@ -9,7 +10,7 @@ import { Button, DarkModeButton, Link as CLink, NavButton } from '@/components';
 import { fadeIn, slideIn } from '@/styles/animations';
 
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import Link from 'next/link'; // Import do Link do Next.js
 import { useEffect, useState } from 'react';
 
 /**
@@ -18,7 +19,6 @@ import { useEffect, useState } from 'react';
  * @param {String} [config.id=navbar] - id of navbar
  * @param {Number} [config.offset=100] - offset of navbar in px
  */
-
 const hideNavWhileScrolling = ({
   id = 'navbar',
   offset = 100,
@@ -44,7 +44,7 @@ const hideNavWhileScrolling = ({
 };
 
 type NavItemsProps = {
-  href?: string;
+  href?: string; // Mantém como opcional
   children: React.ReactNode;
   index: number;
   delay: number;
@@ -52,6 +52,8 @@ type NavItemsProps = {
 };
 
 const NavItem = ({ href, children, onClick, index, delay }: NavItemsProps) => {
+  // CORREÇÃO APLICADA AQUI: Garante que href seja uma string válida, mesmo se vier undefined
+  const finalHref = href || `#`; // Se href for undefined/null, usa '#' como fallback
   return (
     <motion.li
       className="group"
@@ -60,7 +62,7 @@ const NavItem = ({ href, children, onClick, index, delay }: NavItemsProps) => {
       animate="show"
     >
       <CLink
-        href={href || `/#${children}`}
+        href={finalHref} // Usa o href final garantido
         className="block p-2 duration-500 hover:text-accent"
         onClick={onClick}
         withPadding
@@ -112,7 +114,7 @@ const Navbar = () => {
             {navLinks.map(({ name, url }, i) => (
               <NavItem
                 key={i}
-                href={url}
+                href={url || '#'} // CORREÇÃO: Garante que a URL não seja undefined
                 index={i}
                 delay={ANIMATION_DELAY}
                 onClick={() => setNavbarCollapsed(false)}
@@ -125,7 +127,7 @@ const Navbar = () => {
               {cta && (
                 <Button
                   type="link"
-                  href={cta.url}
+                  href={cta.url || '#'} // CORREÇÃO: Garante que a URL não seja undefined
                   sameTab={cta?.sameTab}
                   variants={slideIn({
                     delay: ANIMATION_DELAY + navLinks.length / 10,

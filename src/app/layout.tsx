@@ -1,4 +1,4 @@
-import { seoData } from '@/lib/content/portfolio';
+import { seoData } from '@/lib/content/seo';
 import ThemeProvider from '@/lib/hooks/use-theme';
 import fontVariables from '@/lib/utils/fonts';
 
@@ -25,14 +25,14 @@ export const metadata: Metadata = {
     url: seoData.url,
     title: seoData.title,
     description: seoData.description,
-    images: seoData.image,
+    images: seoData.image, // seoData.image deve ser o caminho para sua imagem
     siteName: seoData.title,
   },
   twitter: {
     card: 'summary_large_image',
     title: seoData.title,
     description: seoData.description,
-    images: seoData.image,
+    images: seoData.image, // seoData.image deve ser o caminho para sua imagem
     site: seoData.url,
   },
   icons: [
