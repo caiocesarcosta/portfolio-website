@@ -9,8 +9,8 @@ export const skillsSection: SkillsSectionType = {
       id: 'mobile-development',
       title: 'Desenvolvimento Mobile (Android)',
       lottie: {
-        light: '/lotties/mobile-dev.json', // Ajuste para um lottie relevante ou remova
-        dark: '/lotties/mobile-dev-dark.json', // Ajuste para um lottie relevante ou remova
+        light: '/lotties/frontend-cold.json', // Ajuste para um lottie relevante ou remova
+        dark: '/lotties/coding.json', // Ajuste para um lottie relevante ou remova
       },
       points: [
         'Mais de 10 anos de experiência em desenvolvimento Android com Java e Kotlin.',
