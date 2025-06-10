@@ -74,7 +74,7 @@ const FeaturedProject = ({
         >
           <div>
             <div className="font-mono hidden lg:block text-accent capitalize text-xs lg:mb-2.5">
-              featured project
+              projeto em destaque
             </div>
             <h2 className="heading-tertiary !text-white lg:!text-dark-2 !font-semibold lg:!font-normal !normal-case">
               {/* CORREÇÃO AQUI: Garante que 'url' seja uma string válida para a tag <a> nativa */}

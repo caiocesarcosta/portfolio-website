@@ -12,7 +12,7 @@ export const aboutSection: AboutSectionType = {
       id: getId(),
       title: 'Introdução',
       content:
-        'Desenvolvedor Android Sênior com mais de 10 anos de experiência em todo o ciclo de vida do desenvolvimento de software, especializado na concepção, criação e evolução de aplicativos inovadores para a plataforma Android. Possuo um domínio sólido em Kotlin e Java, aplicando as mais recentes tecnologias Jetpack (Compose, Coroutines, Flow) e arquiteturas robustas como MVVM, MVP e MVI. Sou um forte defensor da qualidade de código, com vasta experiência em testes unitários e de interface (Mockito, JUnit), e na implementação de Design Patterns e princípios SOLID.',
+        'Desenvolvedor Android com mais de 10 anos de experiência em todo o ciclo de vida do desenvolvimento de software, especializado na concepção, criação e evolução de aplicativos inovadores para a plataforma Android. Possuo um domínio sólido em Kotlin e Java, aplicando as mais recentes tecnologias Jetpack  e arquiteturas robustas como MVVM, MVP e MVI. Sou um forte defensor da qualidade de código, com vasta experiência em testes unitários e de interface (Mockito, JUnit e Espresso), e na implementação de Design Patterns e princípios SOLID.',
     },
     {
       id: getId(),
@@ -30,7 +30,7 @@ export const aboutSection: AboutSectionType = {
       id: getId(),
       title: 'Metodologias e Liderança',
       content:
-        'Sou um profissional proativo, com experiência em mentoria, gestão de projetos com metodologias ágeis (Scrum, Kanban), e focado em entregar soluções de alto impacto que combinem excelência técnica com valor de negócio. Busco oportunidades desafiadoras para aplicar minha experiência consolidada e minha visão abrangente de tecnologia em mobile e IA.',
+        'Sou um profissional proativo, com experiência em metodologias ágeis (Scrum, Kanban), e focado em entregar soluções de alto impacto que combinem excelência técnica com valor de negócio. Busco oportunidades desafiadoras para aplicar minha experiência consolidada e minha visão abrangente de tecnologia em mobile e IA.',
     },
   ],
 };

@@ -1,68 +1,44 @@
 import { FeaturedProjectsSectionType } from '@/lib/types/sections';
 import { getId } from '@/lib/utils/helper';
 
-const featuredProjectsSection: FeaturedProjectsSectionType = {
-  title: "projects i've worked on",
+export const featuredProjectsSection: FeaturedProjectsSectionType = {
+  title: "projetos em destaque", // Título ajustado
   projects: [
     {
       id: getId(),
-      name: 'GetLifeGuard',
-      description: 'An E-Commerce platform for Self-Defense Keychain.',
+      name: 'SuperApp Itaú (BRQ Digital Solutions)',
+      description: 'Atuação estratégica em diversos projetos de grande escala para o Itaú, desenvolvendo funcionalidades complexas e inovadoras no SuperApp e outros módulos bancários.',
       tasks:
-        "As a freelancer, I understood the client's requirements and executed a plan to develop and design an e-commerce platform, including the frontend UI, backend setup with database, APIs, and integration with payment platforms.",
-      url: 'https://life-kit.vercel.app/',
-      img: 'https://life-kit.vercel.app/images/og.png',
-      tags: [
-        'NextJs 14',
-        'TypeScript',
-        'TailwindCSS',
-        'ShadCN',
-        'Prisma',
-        'Stripe',
-      ],
+        'Liderança na refatoração de código Java para Kotlin, adoção de Jetpack Compose, Room, LiveData, Koin e padrões de arquitetura (MVVM, MVVMI, MVP). Desenvolvimento de funcionalidades de Cartões, Limites, Produtos, Empréstimos e programa de pontos Iupp. Participação ativa em Squad de Teste A/B e implementação de testes unitários/interface (JUnit, Mockito, Espresso). Gerenciamento de pacotes Gradle e migração para Android X. Otimização de fluxo de trabalho com GitHub, Jenkins e Jira.',
+      url: 'https://www.brq.com/', // Link para a empresa
+      img: 'https://placehold.co/720x480/007bff/ffffff?text=SuperApp+Itau', // Placeholder, substituir por imagem real
+      tags: ['Android', 'Kotlin', 'Java', 'Jetpack Compose', 'MVVM', 'Testes', 'CI/CD', 'Banking'],
+      repo: '', // Provavelmente um projeto privado, deixar vazio ou usar GitHub geral se houver conteúdo público
     },
     {
       id: getId(),
-      name: 'Valuemetrix',
-      description: 'An AI Powered Investment Platform.',
+      name: 'Automação Residencial (FLEX Automation)',
+      description: 'Criação, desenvolvimento e atualização de aplicativo Android e Desktop para automação residencial, gerenciando smart devices e comunicação via Wi-Fi e Bluetooth.',
       tasks:
-        'I strategically planned project milestones, led a cross-functional team, established a design system, developed the website, and integrated Stripe payments with secure authentication.',
-      url: 'https://www.valuemetrix.io/',
-      img: 'https://www.valuemetrix.io/images/og.png',
-      tags: ['AI/ML', 'NextJs', 'TypeScript', 'TailwindCSS', 'Prisma'],
+        'Desenvolvimento de aplicativo Android (MVP) com sincronismo e configuração de smart válvula via Wi-Fi, notificações de status e controle remoto. Lógica para fechamento automático de válvula em caso de vazamento. Integração com MongoDB e Google Maps. Implementação de Crashlytics e Firebase. Desenvolvimento de aplicativo desktop (.NET, C#, MVVM) para gerenciamento de smart lâmpadas, painéis touch e sensores com comunicação Bluetooth e Wi-Fi.',
+      url: 'https://www.flexautomation.com.br/', // Link para a empresa
+      img: 'https://placehold.co/720x480/28a745/ffffff?text=Flex+Automation', // Placeholder, substituir por imagem real
+      tags: ['Android', 'MVP', 'C#', '.NET', 'Automação', 'IoT', 'MongoDB', 'Firebase'],
+      repo: 'https://github.com/caiocesarcosta', // Link para seu GitHub geral ou repositório específico se existir
     },
     {
       id: getId(),
-      name: 'Velvi Matrimony',
-      description:
-        'A platform that redefines the way individuals find their life partners.',
+      name: 'ControlQuest (Audit Business)',
+      description: 'Criação e desenvolvimento do aplicativo Android ControlQuest para auditorias qualitativas e gerenciamento de informações comerciais em campo.',
       tasks:
-        'As a freelancer, I developed this project by planning, communicating with the client, gathering feedback, implementing UI & pages, and integrating real-time data fetching with filtering functionality.',
-      url: 'https://velvi.vercel.app/',
-      img: 'https://i.postimg.cc/tRS4GvzJ/Screenshot-2024-02-27-at-5-48-49-PM.png',
-      tags: ['NextJs', 'TypeScript', 'TailwindCSS', 'APIs'],
+        'Concepção e desenvolvimento do aplicativo Android ControlQuest, evoluindo da arquitetura MVC para MVVM. Foco em auditorias qualitativas e gerenciamento de dados de campo. Implementação de funcionalidades para geração de relatórios detalhados. Criação da camada de persistência de dados com SQLite. Uso de Controle de Versão de Código Fonte (VCS) para gerenciamento do projeto.',
+      url: 'https://www.auditbusiness.com.br/', // Link para a empresa
+      img: 'https://placehold.co/720x480/ffc107/000000?text=Audit+Business', // Placeholder, substituir por imagem real
+      tags: ['Android', 'MVC', 'MVVM', 'SQLite', 'Auditoria', 'Comercial'],
+      repo: 'https://github.com/caiocesarcosta', // Link para seu GitHub geral ou repositório específico se existir
     },
-    /*   {
-      id: getId(),
-      name: 'Integra',
-      description: 'An AI-Powered Leads Generation Platform.',
-      tasks:
-        'I strategically planned project milestones, led a cross-functional team, established a design system, developed the website, and integrated Stripe payments with secure authentication.',
-      url: 'https://www.integraleads.xyz/',
-      img: 'https://user-images.githubusercontent.com/68834718/279476369-2f69466a-71db-4da0-9afd-04f8f0efb621.jpeg',
-      tags: ['AI/ML', 'NextJs', 'TypeScript', 'TailwindCSS', 'Express'],
-    }, */
-
-    {
-      id: getId(),
-      name: 'Drafton',
-      description: 'The AI-powered platform that simplifies proposal creation.',
-      tasks:
-        'I designed and developed the landing page and implemented the dashboard by creating a user interface and integrating APIs.',
-      url: 'https://www.drafton.io/',
-      img: 'https://i.postimg.cc/4N6dsGcm/Screenshot-2024-06-17-at-11-05-22-PM.png',
-      tags: ['Open AI', 'NextJs', 'TypeScript', 'TailwindCSS', 'Prisma'],
-    },
+    // Removi os projetos anteriores (GetLifeGuard, Valuemetrix, Velvi Matrimony, Drafton)
+    // Se você ainda quiser incluí-los como 'Featured Projects', podemos ajustá-los.
   ],
 };
 

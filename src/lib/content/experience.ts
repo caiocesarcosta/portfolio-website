@@ -4,9 +4,9 @@ export const experienceSection: ExperienceSectionType = {
   title: 'Experiência Profissional',
   experiences: [
     {
-      company: 'BRQ Digital Solutions (para Itaú)',
+      company: 'BRQ',
       companyUrl: 'https://www.brq.com/', // URL da BRQ
-      role: 'Desenvolvedor Android Sênior', // Ajustei para Sênior conforme o About
+      role: 'Desenvolvedor Android',
       started: 'Agosto de 2020',
       upto: 'Abril de 2023',
       tasks: [
@@ -31,8 +31,8 @@ export const experienceSection: ExperienceSectionType = {
       started: 'Janeiro de 2018',
       upto: 'Julho de 2020',
       tasks: [
-        '**Desenvolvimento de Aplicativo Android para Automação Residencial (MVP):** Criação, desenvolvimento e atualização de um aplicativo Android utilizando a arquitetura MVP. Implementação de comunicação e configuração de uma smart válvula via sincronismo com Wi-Fi. Desenvolvimento de funcionalidades para sincronização, configuração inicial, notificações de status e controle remoto. Lógica para fechamento automático da válvula em caso de detecção de vazamento mecânico. Integração com MongoDB e Google Maps. Implementação de Crashlytics e Firebase. Versionamento com GitHub.',
-        '**Desenvolvimento de Aplicativo Desktop para Gerenciamento Residencial (.NET, C#, MVVM):** Criação e desenvolvimento de um aplicativo desktop utilizando C# e MVVM. Utilização do Material Design para interface moderna. Implementação de funcionalidades para gerenciamento e configuração de diversos dispositivos automatizados (smart lâmpadas, painéis touch, sensores de porta e janela) com comunicação Bluetooth e Wi-Fi. Versionamento com GitHub e gerenciamento de atividades com Trello.',
+        'Desenvolvimento de Aplicativo Android para Automação Residencial (MVP):** Criação, desenvolvimento e atualização de um aplicativo Android utilizando a arquitetura MVP. Implementação de comunicação e configuração de uma smart válvula via sincronismo com Wi-Fi. Desenvolvimento de funcionalidades para sincronização, configuração inicial, notificações de status e controle remoto. Lógica para fechamento automático da válvula em caso de detecção de vazamento mecânico. Integração com MongoDB e Google Maps. Implementação de Crashlytics e Firebase. Versionamento com GitHub.',
+        'Desenvolvimento de Aplicativo Desktop para Gerenciamento Residencial (.NET, C#, MVVM):** Criação e desenvolvimento de um aplicativo desktop utilizando C# e MVVM. Utilização do Material Design para interface moderna. Implementação de funcionalidades para gerenciamento e configuração de diversos dispositivos automatizados (smart lâmpadas, painéis touch, sensores de porta e janela) com comunicação Bluetooth e Wi-Fi. Versionamento com GitHub e gerenciamento de atividades com Trello.',
       ],
     },
     {
@@ -42,7 +42,7 @@ export const experienceSection: ExperienceSectionType = {
       started: 'Fevereiro de 2015',
       upto: 'Fevereiro de 2016',
       tasks: [
-        '**Criação e Desenvolvimento do Aplicativo Android ControlQuest:** Fui o criador e principal desenvolvedor do aplicativo Android ControlQuest, inicialmente utilizando a arquitetura MVC (Model-View-Controller) e evoluindo para MVVM. O aplicativo é voltado para a área comercial e tem como objetivo realizar auditorias qualitativas, sendo responsável pelo gerenciamento das informações coletadas em campo.',
+        'Criação e Desenvolvimento do Aplicativo Android ControlQuest:** Fui o criador e principal desenvolvedor do aplicativo Android ControlQuest, inicialmente utilizando a arquitetura MVC (Model-View-Controller) e evoluindo para MVVM. O aplicativo é voltado para a área comercial e tem como objetivo realizar auditorias qualitativas, sendo responsável pelo gerenciamento das informações coletadas em campo.',
         'Desenvolvimento de funcionalidades para a geração de relatórios detalhados sobre a qualidade do ambiente, atendimento e outros pontos operacionais. Criação da camada de persistência de dados utilizando o banco de dados SQLite. Utilização de Controle de Versão de Código Fonte (VCS) para gerenciar as alterações e o histórico do projeto.',
       ],
     },

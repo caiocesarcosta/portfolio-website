@@ -8,6 +8,7 @@ export const portfolioSection: PortfolioSectionType = {
     name: 'Caio César da Costa',
     tagline: 'Desenvolvedor Android | Machine Learning Practitioner',
     image: '/profile.jpg',
+    email: 'caiocesarcosta@hotmail.com', // <--- ADICIONADO: Email do autor
   },
   socialLinks: {
     github: 'https://github.com/caiocesarcosta',
@@ -17,7 +18,7 @@ export const portfolioSection: PortfolioSectionType = {
     twitter: '',
     medium: '',
     discord: '',
-    facebook: '', // <--- ADICIONADO: Define o facebook como string vazia
+    facebook: '',
   },
 };
 

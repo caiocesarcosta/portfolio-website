@@ -88,6 +88,7 @@ export interface PortfolioSectionType extends Section {
     name: string;
     tagline: string;
     image: string;
+    email?: string; // <--- ADICIONADO: Propriedade 'email'
   };
   socialLinks: {
     github?: string;
@@ -97,7 +98,7 @@ export interface PortfolioSectionType extends Section {
     twitter?: string;
     medium?: string;
     discord?: string;
-    facebook?: string; // <--- ADICIONADO: Propriedade 'facebook'
+    facebook?: string;
   };
 }
 
@@ -116,4 +117,18 @@ export type SeoSectionType = {
   keywords: string[];
   url: string;
   image: string;
+
+  
 };
+
+// *** NOVA INTERFACE: EducationSectionType ***
+export interface EducationSectionType extends Section {
+  education: {
+    institution: string;
+    degree: string;
+    started: string; // Pode ser Date | string, dependendo de como você quer armazenar
+    upto: string;     // Pode ser Date | 'present' | string
+    description?: string[]; // Descrição opcional, pode ser um array de pontos
+    url?: string;     // URL opcional da instituição
+  }[];
+}

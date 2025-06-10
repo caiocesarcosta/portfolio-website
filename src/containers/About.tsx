@@ -29,17 +29,14 @@ const About = () => {
             IDEALMENTE, ESTES PARÁGRAFOS TAMBÉM VIRIAM DE aboutSection.list
           */}
           <p>
-            Olá, meu nome é Caio César. Sou um desenvolvedor web Full-Stack
+            Olá, meu nome é Caio César. Sou um desenvolvedor 
             apaixonado e estou sempre buscando explorar novas tecnologias.
           </p>
           <p>
             Atualmente, meu foco principal é o desenvolvimento mobile e a busca
             por uma oportunidade desafiadora na área.
           </p>
-          <p>
-            (Este é um placeholder. Você pode preencher com sua biografia completa ou remover.)
-          </p>
-
+       
           {/* CORREÇÃO APLICADA AQUI: Itera sobre o ARRAY 'list' */}
           {list && list.length > 0 && ( // Verifica se 'list' existe e não está vazio
             <div className="space-y-4"> {/* Adicionado um div para agrupar os itens da lista */}

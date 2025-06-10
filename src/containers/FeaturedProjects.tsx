@@ -16,7 +16,7 @@ const FeaturedProjects = () => {
         </h2>
 
         <p className="font-mono lg:hidden text-accent capitalize text-xs lg:mb-2.5">
-          featured projects
+          projetos em destaque
         </p>
       </div>
 

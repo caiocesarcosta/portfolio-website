@@ -9,13 +9,13 @@ export const skillsSection: SkillsSectionType = {
       id: 'mobile-development',
       title: 'Desenvolvimento Mobile (Android)',
       lottie: {
-        light: '/lotties/frontend-cold.json', // Ajuste para um lottie relevante ou remova
+        light: '/lotties/coding.json', // Ajuste para um lottie relevante ou remova
         dark: '/lotties/coding.json', // Ajuste para um lottie relevante ou remova
       },
       points: [
         'Mais de 10 anos de experiência em desenvolvimento Android com Java e Kotlin.',
-        'Sólida expertise em Jetpack (Compose, MotionLayout, Room, LiveData, ViewBinding, Coroutines, Flow).',
-        'Proficiência em arquiteturas como MVVM, MVP, MVVMI e MVC.',
+        'Sólida expertise em Jetpack (Compose, MotionLayout, LiveData, ViewBinding) e framework como Room, Coroutines-flow, Retrofit, hilt ',
+        'Proficiência em arquiteturas como MVVM, MVP, MVI e MVC.',
         'Experiência em testes unitários e de interface (JUnit, Mockito, Espresso, Robolectric).',
         'Conhecimento em Design Patterns (SOLID, Observer, Repository, Injeção de Dependência, Builder, Singleton, Factory, Delegate).',
       ],
@@ -34,8 +34,8 @@ export const skillsSection: SkillsSectionType = {
       id: 'backend-databases',
       title: 'Backend e Bancos de Dados',
       lottie: {
-        light: '/lotties/backend.json',
-        dark: '/lotties/backend-dark.json',
+        light: '/lotties/cloudinfra.json',
+        dark: '/lotties/cloudinfra.json',
       },
       points: [
         'Experiência com MySQL, DB2, SQLite, Room e MongoDB.',
@@ -55,8 +55,8 @@ export const skillsSection: SkillsSectionType = {
       id: 'machine-learning',
       title: 'Machine Learning (IA)',
       lottie: {
-        light: '/lotties/ml.json',
-        dark: '/lotties/ml-dark.json',
+        light: '/lotties/ethereum.json',
+        dark: '/lotties/ethereum-dark.json',
       },
       points: [
         'Conhecimento em Python, TensorFlow, Keras para desenvolvimento de algoritmos de classificação.',
@@ -77,8 +77,8 @@ export const skillsSection: SkillsSectionType = {
       id: 'other-skills',
       title: 'Outras Habilidades e Ferramentas',
       lottie: {
-        light: '/lotties/tools.json',
-        dark: '/lotties/tools-dark.json',
+        light: '/lotties/build.json',
+        dark: '/lotties/build.json',
       },
       points: [
         'C# e .NET (para desenvolvimento Desktop).',
