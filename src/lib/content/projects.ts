@@ -4,39 +4,50 @@ export const projectsSection: ProjectsSectionType = {
   title: 'Meus Projetos',
   projects: [
     {
-      id: 'brq-itau',
-      name: 'Desenvolvedor Android Sênior - BRQ (Itaú)',
-      url: 'https://www.brq.com/',
-      repo: 'https://github.com/caiocesarcosta',
-      img: '/images/projects/brq-project.jpg',
-      tags: ['Android', 'Kotlin', 'Java', 'Jetpack', 'MVVM', 'CI/CD', 'Testes'],
-      techStack: ['Kotlin', 'Java', 'Android SDK', 'Jetpack Compose', 'Hilt', 'Room', 'Retrofit', 'JUnit', 'Mockito', 'Espresso', 'Jenkins', 'Jira'],
-      description: 'Atuação estratégica em diversos projetos...',
-      year: 2023, // <--- ADICIONE O ANO AQUI (ano de término ou mais relevante)
+      id: 'transfer-learning-project1',
+      name: 'Classificação de Imagens (Gatos/Cachorros) com Transfer Learning',
+      url: '', // Não há URL de demo, deixar vazio
+      repo: 'https://github.com/caiocesarcosta/transfer_learning_projeto1',
+      img: 'https://placehold.co/720x480/4CAF50/ffffff?text=ML+Project+1', // Substitua pela imagem real do projeto
+      tags: ['Machine Learning', 'Deep Learning', 'Visão Computacional', 'Python', 'TensorFlow', 'Keras'],
+      techStack: ['Python', 'TensorFlow', 'Keras', 'NumPy', 'scikit-learn', 'Seaborn', 'Matplotlib'],
+      description: 'Implementação de um modelo de classificação de imagens para gatos e cachorros utilizando Transfer Learning com TensorFlow e Keras, com foco em programação orientada a objetos e análise de desempenho.',
+      year: 2024, // Ano estimado de conclusão/desenvolvimento
     },
     {
-      id: 'flex-automation-android',
-      name: 'Desenvolvedor Android - FLEX Automation (Automação Residencial)',
-      url: 'https://www.flexautomation.com.br/',
-      repo: 'https://github.com/caiocesarcosta',
-      img: '/images/projects/flex-android.jpg',
-      tags: ['Android', 'MVP', 'Automação', 'MongoDB', 'Firebase'],
-      techStack: ['Java', 'Android SDK', 'MVP', 'MongoDB', 'Google Maps', 'Crashlytics', 'Firebase', 'GitHub'],
-      description: 'Criação, desenvolvimento e atualização de aplicativo Android...',
-      year: 2020, // <--- ADICIONE O ANO AQUI
-    },
-    // ... (adicione 'year' a TODOS os outros projetos, incluindo os de ML) ...
-    {
-      id: 'yolo-face-detection',
-      name: 'Dector Face YOLO Project 5',
+      id: 'transform-image-project2',
+      name: 'Processamento de Imagem: Escala de Cinza e Binária',
       url: '',
-      repo: 'https://github.com/caiocesarcosta/dector_face_yolo_project5',
-      img: '/images/projects/yolo-face.jpg',
-      tags: ['Machine Learning', 'Python', 'YOLO', 'Visão Computacional'],
-      techStack: ['Python', 'TensorFlow', 'Keras', 'YOLO'],
-      description: 'Implementação de detecção de faces utilizando o algoritmo YOLO...',
-      year: 2023, // <--- ADICIONE O ANO AQUI (ano do curso ou conclusão do projeto)
+      repo: 'https://github.com/caiocesarcosta/transform-image-gray-binary-project2',
+      img: 'https://placehold.co/720x480/FFC107/000000?text=Image+Processing', // Substitua pela imagem real do projeto
+      tags: ['Processamento de Imagem', 'Python', 'Orientação a Objetos', 'Visão Computacional'],
+      techStack: ['Python', 'Matplotlib', 'PIL (Pillow)', 'NumPy'],
+      description: 'Projeto que demonstra conceitos de processamento de imagem em Python, convertendo imagens coloridas para escala de cinza e binário, com foco em implementação sem bibliotecas externas para manipulação direta de pixels.',
+      year: 2024, // Ano estimado
     },
-    // ... e assim por diante para todos os seus 9 projetos restantes ...
+    {
+      id: 'matrix-confusion-project3',
+      name: 'Classificador CNN com Análise de Matriz de Confusão',
+      url: '',
+      repo: 'https://github.com/caiocesarcosta/matrix_confusion_project3',
+      img: 'https://placehold.co/720x480/03A9F4/ffffff?text=Confusion+Matrix', // Substitua pela imagem real do projeto
+      tags: ['Machine Learning', 'CNN', 'Classificação', 'Python', 'TensorFlow', 'Keras', 'Métricas'],
+      techStack: ['Python', 'TensorFlow', 'Keras', 'NumPy', 'scikit-learn', 'Seaborn', 'Matplotlib'],
+      description: 'Classificador de imagens de gatos e cachorros utilizando CNN, com ênfase na análise detalhada do desempenho do modelo através de matriz de confusão e métricas de classificação avançadas.',
+      year: 2024, // Ano estimado
+    },
+    {
+      id: 'yolov5-detection-project4',
+      name: 'Detecção de Objetos (YOLOv5) com Dataset COCO',
+      url: '',
+      repo: 'https://github.com/caiocesarcosta/detection_transfer_learning_yolo_porject4',
+      img: 'https://placehold.co/720x480/9C27B0/ffffff?text=YOLOv5+Detection', // Substitua pela imagem real do projeto
+      tags: ['Machine Learning', 'Detecção de Objetos', 'YOLOv5', 'Visão Computacional', 'Python'],
+      techStack: ['Python', 'TensorFlow', 'Keras', 'YOLOv5', 'COCO Dataset', 'NumPy', 'requests', 'PIL (Pillow)', 'PyYAML'],
+      description: 'Aplicação do framework YOLOv5 para detecção de objetos em imagens, utilizando o dataset COCO, com processos automatizados de download, conversão, treinamento e detecção.',
+      year: 2024, // Ano estimado
+    },
   ],
 };
+
+export default projectsSection;
