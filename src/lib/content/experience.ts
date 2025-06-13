@@ -37,7 +37,7 @@ export const experienceSection: ExperienceSectionType = {
     },
     {
       company: 'Audit Business',
-      companyUrl: 'https://www.auditbusiness.com.br/', // URL da Audit Business se disponível
+      companyUrl: 'https://www.auditbs.com.br/', // URL da Audit Business se disponível
       role: 'Desenvolvedor Android',
       started: 'Fevereiro de 2015',
       upto: 'Fevereiro de 2016',
