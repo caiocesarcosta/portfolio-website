@@ -1,18 +1,22 @@
-type Props = {
+'use client'; // Mantenha se necessário, ou remova se for um componente puramente de servidor
+
+import Link from 'next/link'; // Import do Link do Next.js
+
+interface Props {
+  href?: string; // <--- CORREÇÃO AQUI: Torna 'href' opcional
   children: React.ReactNode;
   className?: string;
-  href: string;
-};
+}
 
-const SocialLink = ({ href, children, className = '' }: Props) => {
+const SocialLink = ({ href, children, className }: Props) => {
+  // CORREÇÃO APLICADA AQUI: Garante que href seja uma string válida, mesmo se vier undefined ou vazio.
+  // Usamos '#' como fallback para que o Link sempre tenha uma URL válida.
+  const finalHref = href && href.length > 0 ? href : '#';
+
   return (
-    <a
-      href={href}
-      target="_blank"
-      className={`block text-sm p-2.5 hover:text-accent hover:-translate-y-1 focus:outline-none focus:text-accent focus:-translate-y-1 duration-200 ${className}`}
-    >
+    <Link href={finalHref} target="_blank" rel="noopener noreferrer" className={className}>
       {children}
-    </a>
+    </Link>
   );
 };
 
