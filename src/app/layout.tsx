@@ -5,6 +5,8 @@ import fontVariables from '@/lib/utils/fonts';
 import Cursor from '@/components/ui/Cursor';
 
 import '../styles/globals.css';
+// Importe o componente Analytics do Vercel
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -80,7 +82,11 @@ export default function RootLayout({
       </head>
       <body className={`text-text bg-bg ${fontVariables}`}>
         <Cursor className="hidden dark:lg:block" />
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          {children}
+          {/* Adicione o componente Analytics aqui para rastreamento de páginas */}
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   );
